@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,700;1,6..12,300;1,6..12,400;1,6..12,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.bg-image {
+  top: 25px;
+  position: fixed;
+  opacity: 0.6;
+}
+
+/* NavBar */
+.navbar .container {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-around;
+  padding: 10px 0;
+  height: 50px;
+  align-items: center;
+}
+.navbar .container ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.navbar .container ul li a {
+  color: #bf27de;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.navbar .container ul li a:hover {
+  color: #debf27;
+  font-weight: 700;
+  text-shadow: #455a64;
+  transition: all 1s;
+  text-decoration: underline;
+}
+
+.navbar {
+  transition: all 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: #475c66;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.jumbotron {
+  margin-top: 6em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.jumbotron h1 {
+  color: #27debf;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.jumbotron h2 {
+  color: #bf27de;
+  font-size: 1.6em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.jumbotron p {
+  color: #455a64;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.jumbotron hr {
+  width: 90%;
+  margin: auto;
+  border: 2px solid #debf27;
+}
+
+section {
+  position: relative;
+  margin: 4em 2em;
+  padding-top: 4em;
+}
+section .row {
+  margin-top: 2em;
+}
+section h2,
+section h3,
+section h4,
+section h5 {
+  color: #bf27de;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+section p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+section p .card img {
+  padding: 1em 1em;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+section .card {
+  box-shadow: 1px 2px #455a64;
+}
+section span {
+  color: #27debf;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+section #about img {
+  margin-bottom: 2em;
+}
+section #about .btn {
+  width: 24px;
+}
+section form .form-control {
+  border-color: #debf27;
+  border-radius: 30px;
+}
+
+.btn {
+  color: white;
+  background-color: #27debf;
+  border-radius: 25px;
+}
+.btn .spinner-grow {
+  border: 1px solid #27debf;
+}
+
+.btn:hover {
+  color: #27debf;
+  background-color: transparent;
+  border: 1px solid #27debf;
+  font-weight: bold;
+}
+
+footer {
+  color: #bf27de;
+  background-color: #475c66;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  right: 45px;
+  top: 30px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 2;
+}
+@media screen and (min-width: 539.98px) and (max-width: 633.98px) {
+  .menu-toggle input {
+    right: 110px;
+  }
+}
+@media screen and (min-width: 634px) and (max-width: 727.98px) {
+  .menu-toggle input {
+    right: 146.66px;
+  }
+}
+@media screen and (min-width: 728px) and (max-width: 821.98px) {
+  .menu-toggle input {
+    right: 183.32px;
+  }
+}
+@media screen and (min-width: 822px) and (max-width: 915.98px) {
+  .menu-toggle input {
+    right: 220px;
+  }
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #bf27de;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: #bf27de;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: #debf27;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+@media screen and (max-width: 991.98px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: end;
+    background-color: #455a64;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  nav li a {
+    font-size: 0.8rem;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .bg-image {
+    position: relative;
+    opacity: 0.1;
+  }
+}/*# sourceMappingURL=main.css.map */

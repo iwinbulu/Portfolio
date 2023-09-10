@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,700;1,6..12,300;1,6..12,400;1,6..12,700&display=swap");
+
+$primaryColor: #27debf;
+$secondaryColor: #bf27de;
+$teriaryColor: #debf27;
+$textColor: #455a64;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.bg-image {
+  top: 25px;
+  position: fixed;
+  opacity: 0.6;
+}
+
+/* NavBar */
+
+.navbar {
+  .container {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-around;
+    padding: 10px 0;
+    height: 50px;
+    align-items: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      li a {
+        color: $secondaryColor;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+      li a:hover {
+        color: $teriaryColor;
+        font-weight: 700;
+        text-shadow: $textColor;
+        transition: all 1s;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.navbar {
+  transition: all 0.5s;
+}
+.navbar-scrolled {
+  background-color: lighten($color: $textColor, $amount: 0.8);
+  box-shadow: 0 2px 4px rgba($color: black, $alpha: 0.6);
+}
+
+.jumbotron {
+  margin-top: 6em;
+  margin-left: 3em;
+  margin-right: 3em;
+  h1 {
+    color: $primaryColor;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: $secondaryColor;
+    font-size: 1.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  p {
+    color: $textColor;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  hr {
+    width: 90%;
+    margin: auto;
+    border: 2px solid $teriaryColor;
+  }
+}
+
+section {
+  position: relative;
+  margin: 4em 2em;
+  padding-top: 4em;
+  .row {
+    margin-top: 2em;
+  }
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $secondaryColor;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  p .card img {
+    padding: 1em 1em;
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+  .card {
+    box-shadow: 1px 2px $textColor;
+  }
+  span {
+    color: $primaryColor;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  #about {
+    img {
+      margin-bottom: 2em;
+    }
+    .btn {
+      width: 24px;
+    }
+  }
+  form {
+    input {
+      border-color: $teriaryColor;
+      border-radius: 30px;
+    }
+    input:focus {
+      background-color: $primaryColor !important;
+    }
+  }
+}
+
+.btn {
+  color: white;
+  background-color: $primaryColor;
+  border-radius: 25px;
+  .spinner-grow {
+    border: 1px solid $primaryColor;
+  }
+}
+.btn:hover {
+  color: $primaryColor;
+  background-color: transparent;
+  border: 1px solid $primaryColor;
+  font-weight: bold;
+}
+
+footer {
+  color: $secondaryColor;
+  background-color: lighten($color: $textColor, $amount: 0.8);
+}
+
+/* Hamburger Menu */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  input {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    right: 45px;
+    top: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 2;
+    @media screen and (min-width: 539.98px) and (max-width: 633.98px) {
+      right: 110px;
+    }
+    @media screen and (min-width: 634px) and (max-width: 727.98px) {
+      right: 146.66px;
+    }
+    @media screen and (min-width: 728px) and (max-width: 821.98px) {
+      right: 183.32px;
+    }
+    @media screen and (min-width: 822px) and (max-width: 915.98px) {
+      right: 220px;
+    }
+  }
+  span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: $secondaryColor;
+    border-radius: 3px;
+    transition: all 0.5s;
+  }
+}
+
+/* Hamburger Menu Animation */
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: $secondaryColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: $teriaryColor;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+// `xs` returns only a ruleset and no media query
+// ... { ... }
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 575.98px) {
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+
+// `lg` applies to medium devices (tablets, less than 992px)
+
+@media screen and (max-width: 991.98px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav {
+    ul {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 60%;
+      height: 100vh;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: end;
+      background-color: $textColor;
+      z-index: -1;
+      transform: translateX(100%);
+      transition: all 1s;
+      opacity: 0;
+    }
+    li a {
+      font-size: 0.8rem;
+    }
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .bg-image {
+    position: relative;
+    opacity: 0.1;
+  }
+}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media screen and (max-width: 1199.98px) {
+}
+
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@media screen and (max-width: 1399.98px) {
+}
